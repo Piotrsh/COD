@@ -1,29 +1,23 @@
 package com.company;
 
 public class Player {
-    private String name;
-    int amountOfKills;
-    int amountOfDeaths;
+    private final String name;
+    double amountOfKills;
+    double amountOfDeaths;
+    double ratioKills;
 
-    public Player( int amountOfKills, int amountOfDeaths,String name) {
+    public Player( double amountOfKills, double amountOfDeaths,String name, double ratioKills) {
     this.amountOfKills = amountOfKills;
     this.amountOfDeaths = amountOfDeaths;
     this.name = name;
-    }
-    public String getName() {
-        return name;
-    }
-    public int getamountOfKills() {
-        return amountOfKills;
-    }
-    public int getamountOfDeaths() {
-        return amountOfDeaths;
+    this.ratioKills = ratioKills;
     }
     public void displayPlayerInformation()
     {
-        System.out.println("Nazwa gracza: " + name );
+        displayPlayerName();
         System.out.println("Ilosc zabójstw:  " + amountOfKills );
         System.out.println("Ilosc zgonów:  " + amountOfDeaths );
+        System.out.println("Współczynnik zabójstw do zgonów: " + ratioKills);
         System.out.println();
     }
     public void displayPlayerName()
