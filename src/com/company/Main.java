@@ -1,5 +1,7 @@
 package com.company;
 
+import com.google.gson.Gson;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +12,7 @@ public class Main {
         boolean exit = false;
         Game game = new Game();
 
-        while(exit==false) {
+        while(!exit) {
             System.out.println("Wybierz opcje");
             System.out.println("1. Dodaj gracza");
             System.out.println("2. Wyświetl wyniki");
@@ -27,6 +29,10 @@ public class Main {
                     case "4" -> exit = true;
                 }
             } else { System.out.println("Wybrano niewlasciwa cyfrę, spróbuj ponownie..");}
+
+            Gson gson = new Gson();
+            String json = gson.toJson(game.displayPlayer());
+            System.out.println(json);
         }
     }
 }
